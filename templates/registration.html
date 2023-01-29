@@ -1,0 +1,50 @@
+{% include "header.html" %}
+
+<!--&lt;!&ndash; Page Header &ndash;&gt;-->
+<!--  <header class="masthead" style="background-image: url('https://images.unsplash.com/photo-1502252430442-aac78f397426?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')">-->
+<!--    <div class="overlay"></div>-->
+<!--    <div class="container">-->
+<!--      <div class="row">-->
+<!--        <div class="col-lg-8 col-md-10 mx-auto">-->
+<!--          <div class="site-heading">-->
+<!--            <h1>A Blog</h1>-->
+<!--            <span class="subheading">A collection of blog posts.</span>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </header>-->
+
+  <!-- Main Content -->
+<br><br>
+<div class="container col-4">
+    <br>
+    <h1>Register below </h1>
+    <h7>* We will harvest the shit out of your data</h7>
+    <br><br>
+<form method="post">
+    {{ form.username.label() }} {{ form.username() }}
+    <br>
+    {{ form.email.label() }} {{ form.email() }}
+    <br>
+    {{ form.password.label() }} {{ form.password() }}
+    <br>
+    {{ form.submit() }}
+    <br>
+</form>
+</div>
+<br>
+<hr>
+ <!-- All users -->
+  <div class="container">
+      <ol>
+          {% for user in users %}
+          <li class="users" style="font-size:12px;font-family:sans-serif;font-weight: lighter;">
+              User ID: <b>{{ user.id }}</b> - User email: <b>{{ user.email }}</b>
+              - Username: <b>{{ user.username }}</b> - User password: <b>{{ user.password }}</b>
+            </li>
+          {% endfor %}
+          </ol>
+        </div>
+        <hr>
+{% include "footer.html" %}

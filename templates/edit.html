@@ -1,0 +1,12 @@
+
+ <form method="post">
+    {{ form.title.label() }} {{ form.title() }}<br>
+    {{ form.subtitle.label() }} {{ form.subtitle() }} <br>
+    {{ form.author.label() }} {{ form.author() }} <br>
+    {{ form.img_url.label() }} {{ form.img_url() }} <br>
+    {{ form.body.label() }} {{ form.body() }} <br>
+    {{ form.submit() }}
+</form>
+
+ {{ ckeditor.load() }}
+ {{ ckeditor.config(name='body') }}
